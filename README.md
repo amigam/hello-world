@@ -9,3 +9,5 @@ Tämä repositorio on harjoittelua varten.
 1. Samoin
 2. numeroitu
 3. lista!
+
+![meikäläinen](omakuva_pieni.jpg)
