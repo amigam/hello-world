@@ -9,6 +9,7 @@
                 text-align: center;
                 font-family: Helvetica;
                 font-size: 18px;
+                margin-bottom: 200px;
             }
 
             ul, ol {
@@ -36,6 +37,34 @@
                 border-radius: 30px;
             }
         </style>
+        <script>
+
+            // Sain tällaisen idean muuttaa tekstin väriä useampaan kertaan ja se oli pakko toteuttaa... ups :)
+            const varilista = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];     // Lista (0-6) väreistä, joita käytetään.
+            let variNyt = -1;                           // Aloitus tästä, jotta saadaan punainen mukaan ensimmäisellä kerralla.
+            function sateenkaari() {
+                variNyt++;                              // +1 väriin, jotta seuraava tulee käyttöön.
+                if ( variNyt == varilista.length ) {    // Jos tämänhetkinen numero vastaa listan pituutta, eli menee yhden yli 0-6 skaalan...
+                    variNyt = 0;                        // ... niin palataan nollaan.
+                }
+                return varilista[variNyt];              // Palauta valittu väri.
+            }
+
+            // Tästäkin tein vähän monimutkaisemman...
+            let tekstiNyt = 0;                      // Aloitetaan taas nollasta.
+            function tekstiTogglaus() {
+                if ( tekstiNyt == 0 ) {             // Jos 0, tämä teksti valitaan.
+                    teksti = "Kappaleen teksti muutettu. Palauta?";
+                    tekstiNyt = 1;                  // Vaihda toiseen vaihtoehtoon seuraavaa kertaa varten.
+                }
+                else {                              // Jos muu kuin 0, tämä teksti valitaan.
+                    teksti = "Tässä on kappale, jonka teksti muuttuu, kun nappia painaa.";
+                    tekstiNyt = 0;                  // Vaihda takaisin nollaan seuraavaa kertaa varten.
+                }
+                return teksti;                      // Palauta valittu teksti.
+            }
+
+        </script>
     </head>
     <body>
 
@@ -84,6 +113,75 @@
             <input type="submit" value="Lähetä">
         </form>
         <br>
+
+        <hr><br>
+
+        <p id="demo1">Tässä on tekstiä, jonka väri muuttuu, kun nappia painaa.</p>
+        <button type="button" onclick='document.getElementById("demo1").style.color = sateenkaari()'>Vaihda väriä!</button>
+        <br><br>
+
+        <p id="demo2">Tässä on kappale, jonka teksti muuttuu, kun nappia painaa.</p>
+        <button type="button" onclick='document.getElementById("demo2").innerHTML = tekstiTogglaus()'>Muuta tekstiä!</button>
+        <br><br>
+
+        <p>Var, let ja const ovat erilaisia muuttujia. Muutujan voi esitellä etukäteen (suositeltua)<br>
+            tai suoraan käyttäessä, ja sille voi asettaa arvon: numeron, merkkijonon, jne.</p>
+        <p><b>Var</b> on muuttuja, jolle voi antaa uuden arvon. Sen voi myös esitellä useampaan kertaan,<br>
+            jolloin uusi arvo korvaa vanhan. Nykyään sen käyttöä suositellaan vain vanhempiin selaimiin<br>tarkoitetussa koodissa.</p>
+        <p><b>Let</b> on muuttuja, jolle voi antaa uuden arvon. Sitä ei voi esitellä useampaan kertaan,<br>
+            jollei uusi esittely tapahdu eri lohkossa. Let:iä tulisi käyttää silloin, kun const:ia<br>ei voi käyttää.</p>
+        <p><b>Const</b> on muuttuja, jolle <b>ei</b> voi antaa uutta arvoa. Tämä ominaisuus tekee siitä luotettavan pysyvien<br>
+            arvojen kohdalla, vaikka oman syntymävuoden kirjaamisessa. On hyvä huomioida, että tietyissä<br>
+            tyypeissä <i>voi</i> muuttaa tiettyjä arvoja, esim. taulukon solujen arvot.</p>
+        <br>
+        
+        <p id="demo3"></p>
+        <script>
+            // Muuttuja nimeltä luku.
+            let luku = 17;
+            // Tarkistaa, onko syötetty ikä alle 18 ja antaa tuloksen sen perusteella. Ei osaa tunnistaa negatiivisia lukuja, erikoismerkkejä, jne.
+            function ikaTesti() {
+                let vertailu = ( luku < 18 ) ? "alaikäinen.":"täysi-ikäinen.";  // Vertailee luvun.
+                return "Ikäsi on " + luku + ", joten olet " + vertailu;   // Teksti, joka kappaleelle syötetään.
+            }
+            document.getElementById("demo3").innerHTML = ikaTesti();
+        </script>
+
+        <p id="demo4"></p>
+        <script>
+            // Tulostaa viisi kertaa saman tekstinpätkän. Väli laitettu mukaan, ettei olisi niin klaustrofobista.
+            let i = 0;          // Aloitusnumero.
+            let huhuilu = "";   // Merkkijono valmiiksi.
+            do {
+                huhuilu += "Huhuu?! ";
+                i++;
+            }
+            while ( i < 5 );    // 0-4, eli 5 kierrosta.
+            document.getElementById("demo4").innerHTML = huhuilu;
+        </script>
+
+        <p id="demo5"></p>
+        <script>
+            // Eläinlistan tekeminen, for-silmukka, huutomerkkien lisäys, ja asettaminen kappaleeseen.
+            const elainlista = ["Koira", "Kissa", "Hevonen", "Hiiri", "Marsu"];     // Const testiin vaihteeksi!
+                for ( let i = 0; i < elainlista.length; i++ ) {
+                    elainlista[i] += "!";
+                }
+            document.getElementById("demo5").innerHTML = "Listan sisältö: " + elainlista;
+        </script>
+
+        <p id="demo6"></p>
+        <script>
+            // Muuttujat, joita tässä tehtävässä käytetään.
+            let etunimi = "A";
+            let sukunimi = "G";
+            // Muodostaa tervehdyslauseen parametrien ympärille.
+            function tervehdys(etu, suku) {
+                return "Hei " + etu + " " + suku + "!";
+            }
+            // Kutsuu funktiota ja asettaa kappaleeseen.
+            document.getElementById("demo6").innerHTML = tervehdys(etunimi, sukunimi);
+        </script>
 
     </body>
 </html>
