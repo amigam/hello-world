@@ -3,11 +3,37 @@
     <head>
         <title>Otsikko</title>
         <style>
+            body {
+                color: darkslateblue;
+                background-color: lightsteelblue;
+                text-align: center;
+                font-family: Helvetica;
+                font-size: 18px;
+            }
+
+            ul, ol {
+                list-style-position: inside;
+            }
+
+            #punateksti {
+                color: darkred;
+            }
+
+            label.viherteksti {
+                color: darkslategray;
+            }
+
             .siniviherDiv {
                 border: 5px outset green;
                 background-color: darkblue;
                 color: white;
                 text-align: center;
+                padding: 10px;
+                margin: 20px;
+            }
+
+            .siniviherDiv:hover {
+                border-radius: 30px;
             }
         </style>
     </head>
@@ -25,7 +51,8 @@
         <h4>Otsikko 4</h4>
         <h6>Otsikko 6</h6>
 
-        <p>Tässä vielä esimerkki kappaleesta.</p>
+        <!-- Testattu varmuuden vuoksi: Luokka ei tee mitään, koska värinvaihto on voimassa vain lomakkeen teksteissä. -->
+        <p class="viherteksti">Tässä vielä esimerkki kappaleesta.</p>
 
         <img src="https://media.istockphoto.com/id/135074023/photo/cloudscape-at-sunrise.jpg?s=612x612&w=0&k=20&c=qWTEV10ixpqjiNYkHoTyO-I0SdHVUVlEYN4Qjyykf0M=" alt="Kuva auringosta." width="150" height="100">
         <br>
@@ -39,22 +66,24 @@
         <ul>
             <li><a href="https://www.salpaus.fi/">Salpauksen verkkosivut</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="breakpoint/index.html">Breakpoint-tehtävä</a></li>
         </ul>
 
         <div class="siniviherDiv">Testailua</div>
         <br>
 
         <form>
-            <label for="tekstikentta">Tekstikenttä:</label><br>
+            <label for="tekstikentta" id="punateksti">Tekstikenttä:</label><br>
             <input type="text" name="tekstikentta"><br>
             <input type="checkbox" name="monivalinta1">
-            <label for="monivalinta1">Monivalinta 1</label><br>
+            <label for="monivalinta1" class="viherteksti">Monivalinta 1</label><br>
             <input type="checkbox" name="monivalinta2">
-            <label for="monivalinta2">Monivalinta 2</label><br>
+            <label for="monivalinta2" class="viherteksti">Monivalinta 2</label><br>
             <input type="checkbox" name="monivalinta3">
-            <label for="monivalinta3">Monivalinta 3</label><br>
+            <label for="monivalinta3" class="viherteksti">Monivalinta 3</label><br>
             <input type="submit" value="Lähetä">
         </form>
+        <br>
 
     </body>
 </html>
