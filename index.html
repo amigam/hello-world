@@ -1,7 +1,60 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>Otsikko</title>
+        <style>
+            .siniviherDiv {
+                border: 5px outset green;
+                background-color: darkblue;
+                color: white;
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
+
+        <h3>Miten tyhjän tagin käyttö eroaa muiden tagien käytöstä?</h3>
+        <p>Tyhjällä tagilla ei ole tagin loppua määrittävää päätettä, vaan se toimii sellaisenaan. Hyvä esimerkki on rivinvaihto &lt;br&gt;.</p>
+        <br>
+
+        <h3>Mitä case sensitive tarkoittaa?</h3>
+        <p>Case sensitive tarkoittaa, että isoilla ja pienillä kirjaimilla on merkitystä kyseisen asian toimivuuden kannalta. HTML <b>ei</b> ole case sensitive.</p>
+        <br>
+
+        <h2>Otsikko 2</h2>
+        <h4>Otsikko 4</h4>
+        <h6>Otsikko 6</h6>
+
+        <p>Tässä vielä esimerkki kappaleesta.</p>
+
+        <img src="https://media.istockphoto.com/id/135074023/photo/cloudscape-at-sunrise.jpg?s=612x612&w=0&k=20&c=qWTEV10ixpqjiNYkHoTyO-I0SdHVUVlEYN4Qjyykf0M=" alt="Kuva auringosta." width="150" height="100">
+        <br>
+
+        <ol>
+            <li>numerointia</li>
+            <li>tällä</li>
+            <li>listalla</li>
+        </ol>
+
+        <ul>
+            <li><a href="https://www.salpaus.fi/">Salpauksen verkkosivut</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+
+        <div class="siniviherDiv">Testailua</div>
+        <br>
+
+        <form>
+            <label for="tekstikentta">Tekstikenttä:</label><br>
+            <input type="text" name="tekstikentta"><br>
+            <input type="checkbox" name="monivalinta1">
+            <label for="monivalinta1">Monivalinta 1</label><br>
+            <input type="checkbox" name="monivalinta2">
+            <label for="monivalinta2">Monivalinta 2</label><br>
+            <input type="checkbox" name="monivalinta3">
+            <label for="monivalinta3">Monivalinta 3</label><br>
+            <input type="submit" value="Lähetä">
+        </form>
+
     </body>
 </html>
