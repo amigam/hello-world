@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Projekti</title>
+        <link rel="stylesheet" type="text/css" href="projekti.css">
+        <script type="text/javascript" src="projekti.js"></script>
+    </head>
+    <body>
+
+    <div class="otsikko"><h1>Tieto- ja viestintätekniikan perustehtävät</h1></div>
+
+    <div class="sisalto">
+
+    <div class="merkinta">
+        <h1>Lisää merkintä</h1>
+        <div id="merkintaIlmoitus1"></div>
+        <form class="merkintaAlue">
+        <p><label for="nimi">Nimi:</label><br>
+        <input id="nimi" type="text"></p>
+        <p><label for="tieto">Tieto:</label><br>
+        <input id="tieto" type="text"></p>
+        <input class="nappi" id="lisaysnappi" type="submit" value="Lisää tieto" onclick="lisaaMerkinta(); return false">
+        </form>
+    </div>
+
+    <div id="merkintaIlmoitus2"></div>
+
+    <div class="suoritettavat">
+        <h2>Suoritettavat:</h2>
+        <div class="suoritus"><input name="valinta-html" type="checkbox">
+        <label for="valinta-html">HTML</label></div>
+        <div class="suoritus"><input name="valinta-css" type="checkbox">
+        <label for="valinta-css">CSS</label></div>
+        <div class="suoritus"><input name="valinta-js" type="checkbox">
+        <label for="valinta-js">JavaScript</label></div>
+        <div class="suoritus"><input name="valinta-cicd" type="checkbox">
+        <label for="valinta-cicd">CI/CD</label></div>
+        <input class="nappi2" type="submit" value="Merkkaa" onclick="lisaaSuoritus(); return false">
+    </div>
+
+    </div>
+
+    </body>
+</html>

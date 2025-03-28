@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    color: #4C4141;
+    background-color: #0A4A77;
+    font-family: Arial;
+}
+
+br {
+    margin: 5px 0;
+}
+
+h1, h2 {
+    color: #8A2BE2;
+}
+
+.otsikko {
+    background-color: #FA7DB1;
+    text-align: center;
+    padding: 10px;
+}
+
+.sisalto {
+    width: 70%;
+    margin: 20px auto;
+}
+
+.merkinta {
+    background-color: #FA7DB1;
+    margin: 20px auto;
+    padding: 20px;
+    padding-bottom: 25px;
+}
+
+#nimi, #tieto, .nappi, .nappi2 {
+    border-radius: 10px;
+    border: 0px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.nappi, .nappi2 {
+    color: #FFFFFF;
+    background-color: #332C2C;
+    font-size: 14px;
+}
+
+.nappi:active, .nappi2:active {
+    background-color: #4A3F3F;
+}
+
+.nappi.varoitus {
+    color: #FFFFFF;
+    background-color: red;
+}
+
+#merkintaIlmoitus1 {
+    color: #FFFFFF;
+    background-color: #A00707;
+    padding: 15px;
+    width: 95%;
+    margin: 0 auto;
+    display: none;
+}
+
+#merkintaIlmoitus2, .suoritus {
+    font-size: 14px;
+    background-color: #F8E7FD;
+    padding: 10px;
+    width: 95%;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+#merkintaIlmoitus2 {
+    display: none;
+}
+
+.suoritus {
+    margin-bottom: 8px;
+}
+
+.nappi2 {
+    margin-top: 10px;
+}
